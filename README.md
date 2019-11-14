@@ -1,5 +1,5 @@
 # Tarea Peón Ajedrez
-## Profesor: José Ramón Jiménez Reyes
+## Profesor: Andrés Rubio del Río
 ## Alumno:
 
 La tarea va a consistir en modelar el movimiento de un peón de ajedrez por el tablero de dicho juego.
