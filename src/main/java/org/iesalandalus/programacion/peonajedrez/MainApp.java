@@ -2,7 +2,9 @@ package org.iesalandalus.programacion.peonajedrez;
 
 import javax.naming.OperationNotSupportedException;
 
+import org.iesalandalus.programacion.utilidades.Color;
 import org.iesalandalus.programacion.utilidades.Entrada;
+import org.iesalandalus.programacion.utilidades.Peon;
 
 
 public class MainApp {
@@ -129,8 +131,13 @@ public class MainApp {
 	
 	private static void crearPeonDefecto() {
 		peon = new Peon();
-		System.out.println("Creado Peón por defecto");
+		System.out.println("Creado peón por defecto");
 	}
 	
+	private static void crearPeonColor() {
+		Color color = elegirColor();
+		peon = new Peon(color);
+		System.out.println("Creado peón de color");
+	}
 	
 }
