@@ -33,7 +33,24 @@ public class Peon {
 			posicion=new Posicion(7, 'd');
 	}
 	
+	public Peon(Color color, char columna) throws NullPointerException, IllegalArgumentException
+	{
+		if(color==null)
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+		if(!(columna=='c' || columna=='f'))
+			throw new IllegalArgumentException("ERROR: Columna no válida.");		
+		
+		setColor(color);
+		if(color.equals(Color.BLANCO))
+			posicion=new Posicion(2, columna);
+		else
+			posicion=new Posicion(7, columna);
+	}
+	
 	//Getters y Setters
+	public Color getColor() {
+		return color;
+	}
 	
 	private void setColor(Color color) {
 		if(color==null)
