@@ -22,7 +22,7 @@ public class Posicion
 	public Posicion(Posicion p) throws NullPointerException
 	{
 		if(p==null)
-			throw new NullPointerException("ERROR:");
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
 		setFila(p.getFila());
 		setColumna(p.getColumna());
 	}
@@ -34,7 +34,7 @@ public class Posicion
 	}
 	private void setFila(int fila) {
 		if(fila<1 || fila>8)
-			throw new IllegalArgumentException("ERROR:");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		
 		this.fila = fila;
 	}
@@ -43,10 +43,12 @@ public class Posicion
 	}
 	private void setColumna(char columna) {
 		if(columna<'a' || columna>'h')
-			throw new IllegalArgumentException("ERROR:");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		
 		this.columna = columna;
 	}
+	
+	//Metodo hashCode
 
 	@Override
 	public int hashCode() {
@@ -56,6 +58,8 @@ public class Posicion
 		result = prime * result + fila;
 		return result;
 	}
+	
+	//Metodo equals
 
 	@Override
 	public boolean equals(Object obj) {
@@ -72,10 +76,12 @@ public class Posicion
 			return false;
 		return true;
 	}
+	
+	//toString
 
 	@Override
 	public String toString() {
-		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+		return "fila=" + fila + ", columna=" + columna;
 	}
 	
 	
