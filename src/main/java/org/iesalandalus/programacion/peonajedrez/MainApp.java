@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.peonajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
@@ -82,10 +84,10 @@ public class MainApp {
 	}
 	
 	private static void mostrarMenuMovimientos() {
-		System.out.println("0- Un paso adelante.");
-		System.out.println("1- Dos pasos adelante");
-		System.out.println("2- Avance a la izquierda");
-		System.out.println("3- Avance a la derecha");
+		System.out.println("1- Un paso adelante.");
+		System.out.println("2- Dos pasos adelante");
+		System.out.println("3- Avance a la izquierda");
+		System.out.println("4- Avance a la derecha");
 	}
 	
 	private static int elegirMovimiento() {
@@ -97,6 +99,31 @@ public class MainApp {
 			opcion = Entrada.entero();
 		} while (opcion < 1 || opcion > 4);
 		return opcion;
+	}
+	
+	private static void realizarMovimiento(int movimiento) throws OperationNotSupportedException {
+		switch (movimiento) 
+		{
+			case 1:
+				peon.mover(1);
+				break;
+				
+			case 2:
+				peon.mover(2);
+				break;
+				
+			case 3:
+				peon.mover(Direccion.IZQUIERDA);
+				break;
+			
+			case 4:
+				peon.mover(Direccion.DERECHA);
+				break;
+				
+				default:
+				
+				break;
+		}
 	}
 	
 	
