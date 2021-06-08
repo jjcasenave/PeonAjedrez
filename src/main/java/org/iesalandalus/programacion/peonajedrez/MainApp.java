@@ -146,4 +146,16 @@ public class MainApp {
 		peon = new Peon(color, columna);
 		System.out.println("Creado peón de color en columna escogida");
 	}
+	
+	private static void mover() {
+		mostrarMenuMovimientos();
+		
+		int movimiento = elegirMovimiento();
+		try {
+			realizarMovimiento(movimiento);
+			System.out.println("Realizado movimiento");
+		} catch (OperationNotSupportedException e) {
+			System.out.println(e.getMessage() + "\n");
+		}
+	}
 }
