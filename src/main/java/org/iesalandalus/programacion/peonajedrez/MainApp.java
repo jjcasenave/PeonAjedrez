@@ -4,6 +4,7 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.utilidades.Entrada;
 
+
 public class MainApp {
 	
 	private static Peon peon;
@@ -124,6 +125,11 @@ public class MainApp {
 				
 				break;
 		}
+	}
+	
+	private static void crearPeonDefecto() {
+		peon = new Peon();
+		System.out.println("Creado Peón por defecto");
 	}
 	
 	
