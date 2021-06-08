@@ -81,5 +81,12 @@ public class MainApp {
 		return columna;
 	}
 	
+	private static void mostrarMenuMovimientos() {
+		System.out.println("0- Un paso adelante.");
+		System.out.println("1- Dos pasos adelante");
+		System.out.println("2- Avance a la izquierda");
+		System.out.println("3- Avance a la derecha");
+	}
+	
 	
 }
