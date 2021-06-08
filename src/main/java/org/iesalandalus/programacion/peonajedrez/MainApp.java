@@ -12,8 +12,17 @@ public class MainApp {
 	private static Peon peon;
 	
 	public static void main(String[] args) {
-			
-		System.out.println("Hasta luego Lucas!!!!");
+		int opcion;
+	do {
+		mostrarMenu();
+		opcion = elegirOpcion();
+		ejecutarOpcion(opcion);
+		if (opcion != 0) {
+			mostrarPeon();
+		}
+	} while (opcion != 0);
+	
+	System.out.println("ADIOS");
 	}
 	
 	private static void mostrarPeon() {
