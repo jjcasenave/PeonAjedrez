@@ -8,23 +8,23 @@ public class Posicion
 	
 	//Metodos
 	
-	//Constructores
-	
-	//Crea un constructor para esta clase que acepte como parámetros la fila y la columna y 
-	//que los asigne a los atributos si son correctos  y si no lance una excepción del mismo 
-	//tipo que la anterior indicando el problema. Para ello utiliza los métodos set anteriormente 
-	//creados. Haz un commit.
+	//Constructor con parametros
 	
 	public Posicion(int fila, char columna) {
 		
-		if(fila<1 || fila>8)
-			throw new IllegalArgumentException("ERROR:");
 		setFila(fila);
-		
-		if(columna<'a' || columna>'h')
-			throw new IllegalArgumentException("ERROR:");
 		setColumna(columna);
 		
+	}
+	
+	//Constructor copia
+	
+	public Posicion(Posicion p) throws NullPointerException
+	{
+		if(p==null)
+			throw new NullPointerException("ERROR:");
+		setFila(p.getFila());
+		setColumna(p.getColumna());
 	}
 	
 	//Getters y Setters
@@ -47,5 +47,31 @@ public class Posicion
 		
 		this.columna = columna;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + columna;
+		result = prime * result + fila;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Posicion other = (Posicion) obj;
+		if (columna != other.columna)
+			return false;
+		if (fila != other.fila)
+			return false;
+		return true;
+	}
+	
 	
 }
