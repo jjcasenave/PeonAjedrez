@@ -12,6 +12,8 @@ public class Peon {
 		
 	//Metodos
 	
+	
+	
 	//Constructor por defecto
 	
 	public Peon() throws IllegalArgumentException
