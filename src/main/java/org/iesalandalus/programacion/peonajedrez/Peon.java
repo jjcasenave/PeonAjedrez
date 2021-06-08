@@ -1,8 +1,6 @@
 package org.iesalandalus.programacion.peonajedrez;
 
-/*Crea la clase Peon, dentro del paquete adecuado, cuyos atributos serán un color (del tipo enumerado Color)
- *  y posicion (de la clase Posicion), con la visibilidad adecuada. Haz un commit.
- */
+import javax.naming.OperationNotSupportedException;
 
 public class Peon {
 	
@@ -12,7 +10,22 @@ public class Peon {
 		
 	//Metodos
 	
-	
+	public void mover(Direccion direccion) throws OperationNotSupportedException {
+		if (direccion == null) {
+			throw new NullPointerException("ERROR: Mover el peón en una dirección nula no está permitido.");
+		}
+		try {
+			int fila = posicion.getFila();
+			fila = (color == Color.BLANCO) ? fila + 1 : fila - 1;
+			if (direccion == Direccion.IZQUIERDA) {
+				setPosicion(new Posicion(fila, (char)(posicion.getColumna() - 1)));
+			} else {
+				setPosicion(new Posicion(fila, (char)(posicion.getColumna() + 1)));		
+			}
+		} catch (IllegalArgumentException e) {
+			throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+		}
+	}	
 	
 	//Constructor por defecto
 	
