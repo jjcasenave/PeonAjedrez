@@ -158,4 +158,32 @@ public class MainApp {
 			System.out.println(e.getMessage() + "\n");
 		}
 	}
+	private static void ejecutarOpcion(int opcion) {
+		switch (opcion) {
+			case 1:
+				crearPeonDefecto();
+				break;
+				
+			case 2:
+				crearPeonColor();
+				break;
+				
+			case 3:
+				crearPeonColorColumna();
+				break;
+				
+			case 4:
+				if (peon != null) {
+					mover();
+				} else {
+					System.out.println("No se puede mover porque no existe ningun peón");
+				}
+				break;
+				
+				default:
+				
+				break;
+				
+		}
+	}
 }
