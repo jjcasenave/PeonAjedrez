@@ -88,5 +88,16 @@ public class MainApp {
 		System.out.println("3- Avance a la derecha");
 	}
 	
+	private static int elegirMovimiento() {
+		
+		int opcion;
+		do 
+		{
+			System.out.print("Elige un movimiento (1 - 4): ");
+			opcion = Entrada.entero();
+		} while (opcion < 1 || opcion > 4);
+		return opcion;
+	}
+	
 	
 }
